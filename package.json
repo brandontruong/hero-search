@@ -1,0 +1,46 @@
+{
+  "name": "@pickles/pickles-search-hero",
+  "version": "1.0.5",
+  "description": "Pickles search hero",
+  "main": "dist/hero-search.bundle.js",
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development webpack-dev-server --inline --hot --progress",
+    "start": "superstatic build -p 8181 --host 0.0.0.0 --gzip -c '{\"rewrites\": [{\"source\":\"**\",\"destination\":\"index.html\"}],\"headers\":[{\"source\":\"**\",\"headers\":[{\"key\":\"Cache-Control\",\"value\":\"max-age=86400\"}]}]}'",
+    "prestart": "npm run build",
+    "build": "npm run clean && cross-env NODE_ENV=production webpack -p --progress",
+    "clean": "rimraf ./dist/*",
+    "test": "eslint src tests/**/*.js"
+  },
+  "author": "Pickles Auctions",
+  "publishConfig": {
+    "registry": "https://packages.pickles.com.au/npm/npm"
+  },
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "@types/jquery": "^3.2.16",
+    "@types/lodash": "^4.14.85",
+    "@types/node": "^8.0.52",
+    "@types/react": "^16.0.20",
+    "@types/react-dom": "^16.0.2",
+    "@types/webpack": "^3.8.1",
+    "@types/webpack-dev-server": "^2.9.2",
+    "awesome-typescript-loader": "^3.3.0",
+    "axios": "^0.17.1",
+    "core-js": "^2.5.1",
+    "cross-env": "^5.1.1",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "html-webpack-plugin": "^2.30.1",
+    "lodash": "^4.17.4",
+    "preact": "^8.2.6",
+    "preact-compat": "^3.17.0",
+    "react": "^16.1.1",
+    "react-dom": "^16.1.1",
+    "rimraf": "^2.6.2",
+    "source-map-loader": "^0.2.3",
+    "superstatic": "^5.0.1",
+    "typescript": "^2.6.1",
+    "webpack": "^3.8.1",
+    "webpack-dev-server": "^2.9.4"
+  }
+}
